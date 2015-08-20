@@ -15,7 +15,7 @@
         <div class="panel-body">
           <div>
             <h4>Hotels</h4>
-            <select>
+            <select id='select-hotel'>
               {% for hotel in all_hotels %}
               <option>{{ hotel.name }}</option>
               {% endfor %}
@@ -24,7 +24,7 @@
           </div>
           <div>
             <h4>Restaurants</h4>
-            <select>
+            <select id='select-restaurant'>
               {% for restaurant in all_restaurants %}
               <option>{{ restaurant.name }}</option>
               {% endfor %}
@@ -33,7 +33,7 @@
           </div>
           <div>
             <h4>Activities</h4>
-            <select>
+            <select id='select-activitie'>
               {% for activity in all_activities %}
               <option>{{ activity.name }}</option>
               {% endfor %}
@@ -63,20 +63,20 @@
           <div>
             <h4>My Hotel</h4>
             <ul class="list-group" id='hotelList'>
-              <div class="itinerary-item">
+              <div class="itinerary-item" id="hotelID">
                 <span class="title">Andaz Wall Street</span>
-                <button class="btn btn-xs btn-danger remove btn-circle">x</button>
+                <button id= "hotelRemoveBtn" class="btn btn-xs btn-danger remove btn-circle">x</button>
               </div>
             </ul>
           </div>
           <div>
             <h4>My Restaurants</h4>
             <ul class="list-group" id='restaurantList'>
-              <div class="itinerary-item">
+              <div class="itinerary-item" id="restaurantID">
                 <span class="title">Bouley</span>
-                <button class="btn btn-xs btn-danger remove btn-circle">x</button>
+                <button id= "restaurantRemoveBtn" class="btn btn-xs btn-danger remove btn-circle">x</button>
               </div>
-              <div class="itinerary-item">
+              <div class="itinerary-item" id="activitieID">
                 <span class="title">The Capital Grille</span>
                 <button class="btn btn-xs btn-danger remove btn-circle">x</button>
               </div>
@@ -84,14 +84,14 @@
           </div>
           <div>
             <h4>My Activities</h4>
-            <ul class="list-group" id='activityList'>
+            <ul class="list-group" id='activitieList'>
               <div class="itinerary-item">
                 <span class="title">Mahayana Buddhist Temple Association</span>
                 <button class="btn btn-xs btn-danger remove btn-circle">x</button>
               </div>
               <div class="itinerary-item">
                 <span class="title">South Street Seaport</span>
-                <button class="btn btn-xs btn-danger remove btn-circle">x</button>
+                <button id= "activitieRemoveBtn" class="btn btn-xs btn-danger remove btn-circle">x</button>
               </div>
             </ul>
           </div>
@@ -106,13 +106,5 @@
   var all_restaurants = {{ all_restaurants | json }};
   var all_activities = {{ all_activities | json }};
   {% endautoescape %}
-  function addItem(itemType){
-    return function(){
-      $('#'+ itemType + 'List').append($("<div class='itinerary-item'><span class='title'>" + $(this).parent().find('select').val() + "</span><button class='btn btn-xs btn-danger remove btn-circle'>x</button></div>"));
-    }
-  }
-  $('#hotel-btn').on('click', addItem('hotel'));
-  $('#restaurant-btn').on('click', addItem('restaurant'));
-  $('#activity-btn').on('click', addItem('activity'));
 </script>
 {% endblock %}

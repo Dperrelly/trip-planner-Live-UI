@@ -28,13 +28,14 @@
         </div>
       </div>
     </div>
-    
-   
+
+
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8gLzB5P_NHu_2ztNfwZcYCh0uBpWhl-0&sensor=true"></script>
     <script>
+      var map;
       function initialize_gmaps() {
       // initialize new google maps LatLng object
       var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
@@ -48,7 +49,7 @@
       // get the maps div's HTML obj
       var map_canvas_obj = document.getElementById("map-canvas");
       // initialize a new Google Map with the options
-      var map = new google.maps.Map(map_canvas_obj, mapOptions);
+      map = new google.maps.Map(map_canvas_obj, mapOptions);
       // Add the marker to the map
       var marker = new google.maps.Marker({
         position: myLatlng,
@@ -155,5 +156,6 @@
   </script>
   {% block content %}
   {% endblock %}
+  <script src= 'javascript.js'></script>
   </body>
 </html>
