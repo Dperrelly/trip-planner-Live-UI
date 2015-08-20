@@ -29,12 +29,11 @@
       </div>
     </div>
     
-    {% block content %}
-    {% endblock %}
+   
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfQxgWt-LSZcEmTEN8581Uq9SzZHnpuys&sensor=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8gLzB5P_NHu_2ztNfwZcYCh0uBpWhl-0&sensor=true"></script>
     <script>
       function initialize_gmaps() {
       // initialize new google maps LatLng object
@@ -68,7 +67,7 @@
       ];
       function drawLocation (location, opts) {
         if (typeof opts !== 'object') {
-          opts = {}
+          opts = {};
         }
         opts.position = new google.maps.LatLng(location[0], location[1]);
         opts.map = map;
@@ -154,5 +153,7 @@
       }]
     }];
   </script>
+  {% block content %}
+  {% endblock %}
   </body>
 </html>
