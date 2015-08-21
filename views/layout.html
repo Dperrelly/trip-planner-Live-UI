@@ -36,6 +36,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8gLzB5P_NHu_2ztNfwZcYCh0uBpWhl-0&sensor=true"></script>
     <script>
       var map;
+      var markers = [];
       function initialize_gmaps() {
       // initialize new google maps LatLng object
       var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
@@ -57,14 +58,12 @@
       });
 
       // draw some locations on the map
-      var hotelLocation = [40.705137, -74.007624];
+      var hotelLocation = [/*40.705137, -74.007624*/];
       var restaurantLocations = [
-        [40.705137, -74.013940],
-        [40.708475, -74.010846]
+      //  [40.705137, -74.013940],
+      //  [40.708475, -74.010846]
       ];
       var activityLocations = [
-        [40.716291, -73.995315],
-        [40.707119, -74.003602]
       ];
       function drawLocation (location, opts) {
         if (typeof opts !== 'object') {

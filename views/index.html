@@ -46,52 +46,31 @@
     <div class="col-xs-6 col-sm-12">
       <h3>
         <span id="day-title">
-          <span>Day 2</span>
-          <button class="btn btn-xs btn-danger remove btn-circle">x</button>
+          <span>Day 1</span>
+          <button class="btn btn-xs btn-danger remove btn-circle" onclick='removeDay()'>x</button>
         </span>
       </h3>
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="day-buttons">
-            <button class="btn btn-circle day-btn">1</button>
-            <button class="btn btn-circle day-btn current-day">2</button>
-            <button class="btn btn-circle day-btn">3</button>
-            <button class="btn btn-circle day-btn">+</button>
+            <button day='1' class="btn btn-circle day-btn current-day" onclick='switchDay(this)'>1</button>
+            <button class="btn btn-circle day-btn add-day" onclick='addDay()'>+</button>
           </div>
         </div>
         <div class="panel-body">
           <div>
             <h4>My Hotel</h4>
             <ul class="list-group" id='hotelList'>
-              <div class="itinerary-item" id="hotelID">
-                <span class="title">Andaz Wall Street</span>
-                <button id= "hotelRemoveBtn" class="btn btn-xs btn-danger remove btn-circle">x</button>
-              </div>
             </ul>
           </div>
           <div>
             <h4>My Restaurants</h4>
             <ul class="list-group" id='restaurantList'>
-              <div class="itinerary-item" id="restaurantID">
-                <span class="title">Bouley</span>
-                <button id= "restaurantRemoveBtn" class="btn btn-xs btn-danger remove btn-circle">x</button>
-              </div>
-              <div class="itinerary-item" id="activitieID">
-                <span class="title">The Capital Grille</span>
-                <button class="btn btn-xs btn-danger remove btn-circle">x</button>
-              </div>
             </ul>
           </div>
           <div>
             <h4>My Activities</h4>
             <ul class="list-group" id='activitieList'>
-              <div class="itinerary-item">
-                <span class="title">Mahayana Buddhist Temple Association</span>
-                <button class="btn btn-xs btn-danger remove btn-circle">x</button>
-              </div>
-              <div class="itinerary-item">
-                <span class="title">South Street Seaport</span>
-                <button id= "activitieRemoveBtn" class="btn btn-xs btn-danger remove btn-circle">x</button>
               </div>
             </ul>
           </div>
