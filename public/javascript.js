@@ -1,8 +1,9 @@
   function addItem(itemType){
     var thingName = $('#select-' + itemType).val();
+    //currently only invoked 3 times at start - once for each starting object in drop-down menus
     //console.log('thing name ', thingName);
     eval('var place = findPlace(thingName, all_' + itemType + 's)[0]');
-    //console.log("location: ", place);
+    // console.log("location: ", place);
     var icon = "";
 
     if(itemType === 'hotel') {
@@ -16,7 +17,7 @@
     }
     drawLocation(place.location, {
         icon: icon
-      });
+    });
     return function(){
       $('#'+ itemType + 'List').append($("<div class='itinerary-item'><span class='title'>" + $(this).parent().find('select').val() + "</span><button onclick=removeItem(this) class='btn btn-xs btn-danger remove btn-circle'>x</button></div>"));
     };
@@ -29,6 +30,7 @@
         opts.map = map;
         var marker = new google.maps.Marker(opts);
         //console.log(marker)
+        marker.setMap(map);
       }
 
   function findPlace(name, all_things){
